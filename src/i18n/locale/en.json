@@ -1,0 +1,337 @@
+{
+  "common": {
+    "appName": "OPACITY",
+    "or": "or",
+    "next": "next",
+    "confirm": "confirm",
+    "dismiss": "dismiss",
+    "sort": "sort",
+    "skip": "Skip",
+    "continue": "Continue",
+    "openSettings": "Open Settings",
+    "decline": "Decline",
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "create": "Create",
+    "yes": "Yes",
+    "no": "No",
+    "uploads": "Uploads",
+    "downloads": "Downloads",
+    "loading": "Loading",
+    "waiting": "Waiting",
+    "encrypting": "Encrypting",
+    "failed": "Failed",
+    "done": "Done",
+    "canceled": "Canceled",
+    "uploading": "Uploading",
+    "today": "Today",
+    "file": "file",
+    "file_plural": "files",
+    "select": "Select",
+    "permission_needed": "Permission Needed",
+    "is_granted_permission_failed": "In order to use Opacity to the fullest, we need storage permissions on your device"
+  },
+  "glossary": {
+    "opacity": "OPACITY",
+    "new_folder": "New Folder has been created",
+    "on": "ON",
+    "off": "OFF",
+    "enter_folder_name": "Create Folder Named",
+    "enter_folder_name_to_rename": "Rename Folder To",
+    "enter_file_name_to_rename": "Rename File To",
+    "save_changes": "Don’t want to save the changes?"
+  },
+  "validation": {
+    "invalid_email": "Invalid email address."
+  },
+  "sign_up": {
+    "dont_share_handle": "Your handle will be used to access your files.\nDo not share this with anyone.",
+    "copy_account_handle": "copy account handle",
+    "copied": "Copied!",
+    "create_account": "create account",
+    "get_started": "Get started",
+    "toa": ["I agree to the", "Terms of Service", "and", "Privacy Policy"],
+    "privacy_and_security": "Your <b>Privacy</b> and <b>Security</b> is in your hands"
+  },
+  "sign_in": {
+    "or": "or",
+    "welcome": "Welcome To OPACITY",
+    "privacy_hands": "Your <b>Privacy</b> and <b>Security</b> is in your hands",
+    "enter_account": "Enter account handle",
+    "login": "login",
+    "forgot_account": "<u>Forgot Account Handle?</u>",
+    "create_account": "create an account"
+  },
+  "forgot_account": {
+    "recover_account": "Recover Account Handle",
+    "recovery_instructions_1": "If you have lost your Opacity Account Handle, you can recover it using the 12 word mnemonic phrase provided when you signed up for your account.",
+    "recovery_instructions_2": "Please enter <b>the 12 words</b> below in the exact order originally provided with a space between each word. Then click “<b>Recover Account Handle</b>”",
+    "recover_phrase": "Recover Phrase",
+    "type_here": "Type here",
+    "incorrect_recovery": "Did you enter your recovery phrase correctly?",
+    "mnemonic_length_error": "Mnemonic phrases must be 12 words"
+  },
+  "mnemonic_phrase": {
+    "title": "Mnemonic Phrase",
+    "dont_forget_handle": "If you forget your handle, you will need to present these words in the exact order to recover your account.",
+    "keep_safe": "<b>Keep</b> Your Recovery Phrase <b>Safe</b>",
+    "next": "Mnemonic",
+    "dont_share": "Do not share these with anyone."
+  },
+  "mnemonic_verify": {
+    "title": "Mnemonic Verification",
+    "recover_phrase": "<b>Verify</b> Your Recover Phrase.",
+    "next": "Mnemonic",
+    "dont_share": "Do not share these with anyone.",
+    "show_again": ["Forget your Mnemonic? ", "<u>Show again</u>"],
+    "skip_now": "Skip for now",
+    "wrong_phrases": "Did you save your recovery phrase?\nThat doesn’t look right.",
+    "select_word": "Select word"
+  },
+  "account_create": {
+    "congratulations": "Congratulations!",
+    "lets_upload": "That’s it. Now let’s get some files uploaded.",
+    "lets_go": "lets go!"
+  },
+  "home": {
+    "backup": "VERIFY",
+    "no_files": "You don’t have any files\nLet’s start by adding one below",
+    "create_new_file": "Add A New File",
+    "account_not_back_up": "Mnemonic Not Verified",
+    "risk_no_back_up": "Your account is at risk until you back up your recovery phrases. Make sure to backup as soon as you can.",
+    "remind_me_later": "Remind Me Later",
+    "recent_viewed_files": "Recently Viewed",
+    "view_settings": "View Settings",
+    "need_permissions": "Need Permissions",
+    "need_permissions_desc": "In order to continue backing up from your camera roll",
+    "all_backed_up": "All Done",
+    "num_of_file_uploaded": "{{count}} file uploaded successfully!",
+    "num_of_files_uploaded": "{{count}} files uploaded successfully!",
+    "tap_to_view_files": "Tap to view files",
+    "failure_upload_title": "Issue in uploading",
+    "failure_upload": "There was a failure uploading {{count}} file",
+    "failure_upload_plural": "There was a failure uploading {{count}} files",
+    "try_again": "Try Again",
+    "backing_up": "Backing Up",
+    "fetching_files": "Fetching file updates",
+    "files": "files",
+    "file": "file",
+    "syncing_files_title": "Syncing your files",
+    "syncing_files_subtitle": "We're checking if there’s any new media to automatically upload..",
+    "num_of_file_downloaded": "{{count}} file downloaded successfully!",
+    "num_of_files_downloaded": "{{count}} files downloaded successfully!",
+    "downloading_file": "Downloading file",
+    "downloading_files": "Downloading files",
+    "download_failed": "Download Failed",
+    "failure_downloading_your_files": "There was a failure downloading your files",
+    "failure_downloading_your_file": "There was a failure downloading your file"
+  },
+  "files": {
+    "sort_by": "Sort By",
+    "select_items":"Select Items",
+    "delete_confirmation":"Are you sure you want to delete files from your account?",
+    "deleted_item":"Deleted",
+    "delete_item":"Delete {{count}} Item",
+    "delete_item_plural":"Delete {{count}} Items"
+  },
+  "starred":{
+    "no_files_btn": "View My Files",
+    "no_files_desc": "You haven’t starred any files yet.\n\nStar some to keep track of everything\neasily."
+  },
+  "carousel": {
+    "skip": "SKIP",
+    "lets_go": "LET'S GO",
+    "carousel_title_1": "Anonymous File Storage",
+    "carousel_description_1": "Get access to file storage without needing to give us any sensitive information like name, phone number or email.",
+    "carousel_title_2": "One Handle To Access Your Account",
+    "carousel_description_2": "Easy sign up and sign in process. Get started in seconds.",
+    "carousel_title_3": "Encrypted At Rest Share Only What You Want",
+    "carousel_description_3": "We keep your data safe and secure while giving you granular controls over what you want to share and when.",
+    "step_of": "Step {{current_index}} of {{max_index}}"
+  },
+  "get_started": {
+    "title": "Turn Your Opacity Up",
+    "description": "Still thinking? Tap the button below to get started immediately.",
+    "getStarted": "GET STARTED"
+  },
+  "profile":{
+    "get_support": "Get Support",
+    "get_support_desc": "If you have any issue just give us a message",
+    "help_center": "Help Center",
+    "about": "About",
+    "camera_uploads": "Camera Uploads",
+    "camera_uploads_desc": "Automatically upload your photos",
+    "cameraUploadsArrowText": "OFF",
+    "fileSync": "File Sync",
+    "fileSyncSubTitle": "Configure your file syncronization",
+    "logout": "Logout",
+    "support_message_subject": "Opacity Mobile App: ",
+    "support_message_intro": "Hey,",
+    "support_message_body": "I'm inquiring about ...",
+    "no_space_used": "No Storage Used",
+    "space_used": "Space Used"
+  },
+  "about":{
+    "handle": "Account Handle",
+    "copied_handle": "Your handle has been copied to your clipboard!",
+    "app_version": "App Version",
+    "environment": "Environment",
+    "tnc": "Terms & Conditions",
+    "privacy_policy": "Privacy Policy",
+    "send_logs": "Send Logs to Support Team"
+  },
+  "backupTracker":{
+    "backingUp": "Backing Up...",
+    "allDoneBackingUp": "All done backing up...",
+    "tapToViewFiles": "TAP TO VIEW FILES",
+    "permissionTitle": "Need Permissions",
+    "permissionDetail": "in order to continue backing up from your Camera Roll ",
+    "viewSettings": "VIEW SETTINGS"
+  },
+  "fileSyncOptions": {
+    "wantToAutomaticallyBackup": "Want to automatically\nbackup from your\ncamera roll?"
+  },
+  "camera_uploads": {
+    "camera_upload": "Camera Upload",
+    "include_videos": "Include Videos",
+    "include_photos": "Include Photos",
+    "camera_uploads": "Camera Uploads",
+    "backup_settings": "Backup Settings",
+    "all_media": "All Media",
+    "all_media_desc": "All media in your camera roll will be backed up",
+    "new_media_only": "New Media Only",
+    "new_media_only_desc": "New media will be automatically uploaded",
+    "turn_auto_backup": null,
+    "turn_auto_backup_on": "TURN ON AUTO UPLOADS",
+    "turn_auto_backup_off": "TURN OFF AUTO UPLOADS",
+    "auto_camera_upload": "Automatic Camera Upload",
+    "auto_camera_upload_desc": "Media will be automatically uploaded",
+    "auto_camera_upload_desc_off": "Media will not be automatically uploaded",
+    "auto_camera_upload_desc_photos": "Photos will be automatically uploaded",
+    "auto_camera_upload_desc_videos": "Videos will be automatically uploaded",
+    "auto_sync_warning_title": "Auto sync is in progress",
+    "auto_sync_warning_update_config_desc": "Changing auto sync settings will reset upload order and you'll lose progress for files currently being uploaded. Do you want to continue?",
+    "auto_sync_warning_turn_off_desc": "Disabling{{title}} will stop {{item}} from syncing automatically, do you want to continue?"
+  },
+  "accessPhotoLibrary": {
+    "title": "Please allow Opacity to access your Photo Library",
+    "description": "To upload or save photos, please open Settings and select “Allow Access to All Photos”.  By choosing this, it will not give Opacity permission to upload photos without your consent."
+  },
+  "accessYourPhoneGallery":{
+    "title": "Access your phone gallery",
+    "allowAll": "Allow all photos",
+    "allowSelected": "Allow selected photos"
+  },
+  "options":{
+    "move": "Move",
+    "add_to_starred": "Add to Starred",
+    "rename": "Rename",
+    "delete": "Delete",
+    "private_share": "Private Share",
+    "public_share": "Public Share",
+    "download": "Download",
+    "name": "Name",
+    "name_uppercase": "Name",
+    "type": "Type",
+    "size": "Size",
+    "uploaded": "Date Created",
+    "take_photo": "Take a Photo",
+    "upload_photo": "Upload Photo",
+    "create_folder": "Create Folder",
+    "upload_files": "Upload File(s)",
+    "new_file": "New File",
+    "unable_to_share": "In order to share privately, please revoke the existing public sharing link",
+    "move_to": "Move to"
+  },
+  "file_sharing": {
+    "title": "Share Your File",
+    "anyone_with": "ANYONE WITH THIS LINK CAN VIEW THE FILE",
+    "copy_url": "COPY URL",
+    "revoke": "Revoke",
+    "link_copied": "Sharing Link Copied",
+    "link_not_gen": "Oops, we were unable to create a sharing link for you. Please try again in a few moments.",
+    "this_file_is_opacity": "This file is opacity public file, Everyone can use this file!",
+    "permission_revoke_success": "Sharing Link has been revoked!",
+    "permission_revoke_failed": "Oops, we were unable to revoke this link. Please try again in a few moments.",
+
+    "error_missing_info": "Sharing information is missing",
+    "error_missing_metadata": "Missing File Metadata!",
+    "error_already_public": "File is already shared publicly!",
+    "error_public_while_private": "Can't get public share link while creating a private one!",
+    "error_private_while_public": "Can't private share link while creating a public one!",
+
+    "revoke_public_share_confirmation": "Are you sure you would like to revoke this public share link?",
+    "revoke_public_share_confirmation_on_private_share": "It looks like you already have already publicly shared this file. Would you like to revoke this in order to privately share?",
+    "revoke_public_share_confirmation_yes": "Yes, Revoke",
+    "revoke_public_share_confirmation_no": "No"
+  },
+  "rename_files": {
+    "success_rename_file": "{{name}} has been renamed",
+    "error_rename_file": "Oops, we were unable to rename the file",
+    "error_rename_folder": "Oops, we were unable to rename the folder",
+    "error_rename_with_same_value": "Oops, name should be different than existing one"
+  },
+  "remove_files": {
+    "remove_confirmation": "Are you sure you want to delete\n {{filename}}?",
+    "success_remove_file": "{{name}} has been removed",
+    "success_remove_files": "Removed successfully",
+    "error_delete_file": "Oops, we were unable to remove the file",
+    "error_delete_files": "Oops, we were unable to remove the files",
+    "error_delete_folder": "Oops, we were unable to remove the folder",
+    "error_account_system_not_empty": "Oops, we’re unable to delete folders which are not empty. Please delete or move all the files inside of folder {{name}} and then try again."
+  },
+  "camera": {
+    "permission_use_camera": "Permission to use camera",
+    "required_permission_camera_title": "Camera Access Required",
+    "required_permission_camera_desc": "Please provide camera access in the settings to use this feature"
+  },
+  "sort_by":{
+    "name": "Name",
+    "type": "Type",
+    "name_uppercase": "Name",
+    "size": "Size",
+    "uploaded":"Date Created"
+  },
+  "file_uploads":{  
+    "size_limit": "Sorry, currently only files less than 100MB can be uploaded"
+  },
+  "error": {
+    "folder_already_exists": "A folder with the same name already exists in current directory!",
+    "failed_to_move_the_file": "Failed to move the file"
+  },
+  "sync_ops": {
+    "file_management": "File Management",
+    "manage_files": "Manage Files"
+  },
+  "manage_files": {
+    "file_management": "File Management",
+    "manage_files": "Manage Files",
+    "next_up": "Next Up",
+    "incomplete_uploads": "Incomplete Uploads",
+    "incomplete_downloads": "Incomplete Downloads",
+    "uploading": "Uploading",
+    "downloading": "Downloading",
+    "completed": "Completed",
+    "cancel_uploads": "Cancel Uploads",
+    "cancel_download": "Cancel Download",
+    "cancel_upload": "Cancel Upload",
+    "cancel_all": "Cancel All",
+    "dismiss_all": "Dismiss All",
+    "retry_all": "Retry All",
+    "empty_section_uploading_inprogress": "No files currently uploading.",
+    "empty_section_downloading_inprogress": "No files currently downloading.",
+    "empty_section_uploading_nextup": "No files in the queue to be uploaded.",
+    "empty_section_downloading_nextup": "No files in the queue to be downloaded.",
+    "empty_section_uploading_completed": "No files have been completed yet.",
+    "empty_section_downloading_completed": "No file downloads completed yet.",
+    "empty_section_uploading_incomplete": "No files have been canceled or failed yet.",
+    "empty_section_downloading_incomplete": "No incomplete downloads yet.",
+    "view_file": "View file"
+  },
+  "move_files_and_folders": {
+    "move_here": "Move Here",
+    "select_all": "Select All",
+    "unselect_all": "Unselect All"
+  }
+}

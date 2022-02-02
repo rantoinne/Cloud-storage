@@ -1,0 +1,6 @@
+[submodule "lib/opacity-library"]
+	path = lib/opacity-library
+	url = https://github.com/FireKamp/opacity-app-library
+[submodule "lib/rn-file-scanner"]
+	path = lib/rn-file-scanner
+	url = https://github.com/FireKamp/opacity-file-scanner

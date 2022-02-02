@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="opacityServiceNotification_channelIDTxt">Opacity_FileSyncs</string>
+    <string name="opacityServiceNotification_channelNameTxt">Opacity_FileSyncs_Background_Service</string>
+    <string name="opacityServiceNotification_titleTxt">Opacity</string>
+    <string name="opacityServiceNotification_contentTxt">Syncing your files…</string>
+</resources>

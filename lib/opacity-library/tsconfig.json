@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "importHelpers": true,
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "module": "commonjs"
+  },
+  "include": ["types/**/*.d.ts", "packages/**/src/**/*.ts"]
+}

@@ -1,0 +1,173 @@
+version: 2.1
+orbs:
+  slack: circleci/slack@4.4.4
+
+parameters:
+  run_dev_build:
+    type: boolean
+    default: false
+
+  run_staging_build:
+    type: boolean
+    default: false
+
+  run_prod_build:
+    type: boolean
+    default: false
+
+node_image: &node_image
+  docker:
+    - image: node:12
+
+android_image: &android_image
+  docker:
+    - image: reactnativecommunity/react-native-android
+
+aliases:
+  - &restore-yarn-cache
+    name: Restore cached root node_modules
+    keys: 
+      - yarn-main-cache-{{ checksum "yarn.lock" }}
+      - yarn-main-cache- # partial cache restore (get as much as possible dependencies from the most recent cache rather than start from zero)
+  - &restore-submodule-opacity-lib-yarn-cache
+    name: Restore Cached Submodules (opacity-library)
+    key: submodule-opacity-lib-cache-
+  - &restore-submodule-rn-file-scanner-yarn-cache
+    name: Restore Cached Submodules (rn-file-scanner)
+    key: submodule-rn-file-cache-
+
+  - &save-yarn-cache
+    name: Save node_modules to cache
+    key: yarn-main-cache-{{ checksum "yarn.lock" }}
+    paths:
+      - node_modules
+  - &save-opacity-lib-yarn-cache
+    name: Save Submodules (opacity-library) to cache
+    key: submodule-opacity-lib-cache-{{ epoch }} # cache submodules for next android varient builds Jobs
+    paths:
+      - "./lib/opacity-library"
+      - "./lib/rn-file-scanner"
+  - &save-rn-file-scanner-yarn-cache
+    name: Save Submodules (rn-file-scanner) to cache
+    key: submodule-rn-file-cache-{{ epoch }} # cache submodule for next android varient builds Jobs
+    paths:
+      - "./lib/rn-file-scanner"      
+
+restore_yarn_cache: &restore_yarn_cache
+  restore_cache: *restore-yarn-cache
+
+restore_submodule_opacity_lib_yarn_cache: &restore_submodule_opacity_lib_yarn_cache
+  restore_cache: *restore-submodule-opacity-lib-yarn-cache
+restore_submodule_rn_file_scanner_yarn_cache: &restore_submodule_rn_file_scanner_yarn_cache
+  restore_cache: *restore-submodule-rn-file-scanner-yarn-cache
+
+save_yarn_cache: &save_yarn_cache
+  save_cache: *save-yarn-cache
+
+save_submodule_opacity_lib_yarn_cache: &save_submodule_opacity_lib_yarn_cache
+  save_cache: *save-opacity-lib-yarn-cache
+save_submodule_rn_file_scanner_yarn_cache: &save_submodule_rn_file_scanner_yarn_cache
+  save_cache: *save-rn-file-scanner-yarn-cache 
+
+jobs:
+  node_build:
+    <<: *node_image
+    steps:
+      - checkout
+      - *restore_yarn_cache
+      - run: yarn prepare:submods
+      - *restore_submodule_opacity_lib_yarn_cache
+      - run: yarn --cwd ./lib/opacity-library
+      - *save_submodule_opacity_lib_yarn_cache
+      - *restore_submodule_rn_file_scanner_yarn_cache
+      - run: yarn --cwd ./lib/rn-file-scanner
+      - *save_submodule_rn_file_scanner_yarn_cache
+      - run: yarn install --network-concurrency 1
+      - *save_yarn_cache
+
+  android_build_dev:
+    <<: *android_image
+    steps:
+      - checkout
+      - run: yarn config set script-shell /bin/bash
+      - run: yarn ci:create-release-key
+      - *restore_yarn_cache
+      - *restore_submodule_opacity_lib_yarn_cache
+      - *restore_submodule_rn_file_scanner_yarn_cache
+      - run: yarn build:apk "dev"
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+      - store_artifacts:
+          path: build/
+          destination: build/apk-file
+  android_build_staging:
+    <<: *android_image
+    steps:
+      - checkout
+      - run: yarn config set script-shell /bin/bash
+      - run: yarn ci:create-release-key
+      - *restore_yarn_cache
+      - *restore_submodule_opacity_lib_yarn_cache
+      - *restore_submodule_rn_file_scanner_yarn_cache
+      - run: yarn build:apk "staging"
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+      - store_artifacts:
+          path: build/
+          destination: build/apk-file
+  android_build_prod:
+    <<: *android_image
+    steps:
+      - checkout
+      - run: yarn config set script-shell /bin/bash
+      - run: yarn ci:create-release-key
+      - *restore_yarn_cache
+      - *restore_submodule_opacity_lib_yarn_cache
+      - *restore_submodule_rn_file_scanner_yarn_cache
+      - run: yarn build:apk "prod"
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+      - store_artifacts:
+          path: build/
+          destination: build/apk-file
+
+workflows:
+  build:  
+    jobs:
+      - node_build:
+          filters:
+                branches:
+                  only: 
+                    - develop
+                    - staging
+                    - /^release\/v/gm
+      - android_build_dev:
+          requires:
+            - node_build
+          filters:
+            branches:
+              only: develop      
+      - android_build_staging:
+          requires:
+          - node_build
+          filters:
+            branches:
+              only: staging
+      - android_build_prod:
+          requires:
+          - node_build
+          filters:
+            branches:
+              only: /^release\/v/gm
